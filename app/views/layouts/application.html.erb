@@ -9,12 +9,19 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <header>
-      <%= render 'layouts/navigation' %>
-    </header>
-    <main role="main">
-       <%= render 'layouts/messages' %>
-       <%= yield %>
-    </main>
+    <% unless @hide_header %>
+      <header>
+        <%= render 'layouts/navigation' %>
+      </header>
+      <main role="main" class="center">
+         <%= render 'layouts/messages' %>
+         <%= yield %>
+      </main>
+    <% else %>
+      <div role="main" class="center" %>
+        <%= render 'layouts/messages' %>
+        <%= yield %>
+      </div>
+    <% end %>
   </body>
 </html>

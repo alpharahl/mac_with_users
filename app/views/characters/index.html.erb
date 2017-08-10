@@ -1,0 +1,7 @@
+<h3>Characters</h3>
+<% @users_characters.each do |user_id, user_chars| %>
+  <h2><%= user_chars[0].name %></h2>
+  <% user_chars[1].each do |char| %>
+    <h3><%= char.name || "Unknown" %></h3>
+  <% end %>
+<% end %>
